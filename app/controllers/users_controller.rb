@@ -3,9 +3,9 @@ get '/users/new' do
 end
 
 post '/users' do
-  p params
   @user = User.new(params[:user])
   if @user.save
+    login
     redirect "/users/#{@user.id}"
   else
    @errors = @user.errors.full_messages
@@ -18,6 +18,14 @@ get '/users/:id' do
     @user = User.find(params[:id])
     erb :'/users/show'
   else
+    p "wtf"
     redirect '/login'
   end
+end
+
+delete '/users/:id' do
+  @user = User.find(params[:id])
+  @user.destroy()
+  logout
+  redirect '/'
 end

@@ -6,12 +6,15 @@ post '/login' do
   @user = User.find_by(email: params[:email])
 
   if @user && @user.authenticate(params[:password])
-    # log them in
-    p "hello"
+    login
+    redirect "/users/#{@user.id}"
   else
     # give them errors
-    p "errors"
+    @errors = ["Email password combo not found"]
+    erb :'/sessions/login'
   end
 end
 
-# logout
+get '/logout' do
+  logout
+end
