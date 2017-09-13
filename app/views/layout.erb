@@ -12,12 +12,29 @@
   -->
   <link rel="stylesheet" href="/css/application.css">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title> Beach Dog Bakery </title>
+  <a href="/users/new">Create a new account</a>
+  <br>
+  <% if !logged_in? %>
+  <a href="/login">Login</a>
+    <% else  %>
+  <a href="/logout">Logout</a>
+  <% end  %>
+  <br>
+  <a href="/">Home</a>
+  <br>
 </head>
 <body>
   <%= yield %>
+  <% if @errors  %>
+  <% @errors.each do |error| %>
+  <ul>
+  <li><%= error %> </li>
+  </ul>
+  <% end %>
+  <% end %>
 </body>
 </html>
