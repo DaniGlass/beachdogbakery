@@ -2,6 +2,8 @@ require 'bcrypt'
 
 class User < ActiveRecord::Base
   include BCrypt
+  has_many :requests
+
   validates :username, :email, {presence: true, uniqueness: true}
 
   def password

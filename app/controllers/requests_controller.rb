@@ -1,3 +1,7 @@
-post '/request' do
+get '/requests' do
+
+end
+
+post '/requests' do
 
 end

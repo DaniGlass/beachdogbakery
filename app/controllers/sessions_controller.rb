@@ -18,3 +18,6 @@ end
 get '/logout' do
   logout
 end
+
+# is there a way to reset passwords?
+# how?
