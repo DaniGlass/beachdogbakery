@@ -1,6 +1,9 @@
 <h2>Looking for some "Pin-spiration?"</h2>
-<body>
+<h3>Want some 'pin-spirations?'</h3>
+ <% @board = PinterestAdapter.search('cakes!') %>
+ <% @board.data.each do |pin| %>
+  <a href="<%= pin.url%>"><%= pin.note %></a>
+ <% end %>
 
-<%= erb :'/requests/_cake_request_form'%>
+<%= erb :'/cakerequests/_cake_request_form'%>
 
-</body>

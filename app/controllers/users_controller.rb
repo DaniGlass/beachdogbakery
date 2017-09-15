@@ -14,11 +14,11 @@ post '/users' do
 end
 
 get '/users/:id' do
+  @board = PinterestAdapter.search('cake')
   if logged_in?
     @user = User.find(params[:id])
     erb :'/users/show'
   else
-    p "wtf"
     redirect '/login'
   end
 end

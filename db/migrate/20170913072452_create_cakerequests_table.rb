@@ -1,4 +1,4 @@
-class CreateRequestsTable < ActiveRecord::Migration[5.1]
+class CreateCakerequestsTable < ActiveRecord::Migration[5.1]
   def change
     create_table :cakerequests do |t|
       t.string :title

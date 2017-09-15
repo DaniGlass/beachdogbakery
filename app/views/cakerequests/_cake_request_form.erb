@@ -1,12 +1,21 @@
 <h3>Request a Beach Dog Bakery Cake!</h3>
 <form action="/cakerequests" method="POST">
-  <input type="text" name="cakerequest[title]" placeholder="What are you requesting?">
+  <input type="text" name="cakerequest[title]" placeholder="What type of pastry?">
   <br>
-  <input type="text" name="cakerequest[body]" placeholder="give us some details about your cake">
+  <input type="text" name="cakerequest[body]" placeholder="Event/cake details">
   <br>
   <input type="datetime-local" name="cakerequest[delivery_date]">
   <br>
-  <input type="text" name="cakerequest[choosen_img_url]">
+  <input type="text" name="cakerequest[choosen_img_url]" placeholder="click a pin, drop the url here!">
+  <br>
   <input type="submit" value="Request a cake!">
 </form>
 
+<h2>Looking for some "Pin-spiration?"</h2>
+ <div class='pins'>
+  <% @board.data.each do |pin| %>
+    <a href="https://www.pinterest.com/pin/<%=pin.id%>/"
+    data-pin-do="embedPin">
+    </a>
+  <% end %>
+ </div>
