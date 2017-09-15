@@ -1,11 +1,8 @@
 require 'bcrypt'
-# require 'pintrest-api'
 
 class User < ActiveRecord::Base
-include BCrypt
-
-# where is this ACCESS_TOKEN coming from?
-# client = Pinterest::Client.new(ACCESS_TOKEN)
+  include BCrypt
+  has_many :cakerequests
 
   validates :username, :email, {presence: true, uniqueness: true}
 
