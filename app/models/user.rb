@@ -1,4 +1,5 @@
 require 'bcrypt'
+# require 'pintrest-api'
 
 class User < ActiveRecord::Base
   include BCrypt
