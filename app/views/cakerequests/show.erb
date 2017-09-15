@@ -1,5 +1,15 @@
-<h1>Thank you for requesting a cake!</h1>
+<div class='request-view'>
+  <h1>Thank you for requesting a cake!</h1>
 
-<h3>Please review your request</h3>
+  <h3>Please review your request</h3>
 
-
+  <h4>Type of Pastry: </h4><%=@cakerequest.title.capitalize %>
+  <br>
+  <h4>Details about your Pastry: </h4><%=@cakerequest.body.capitalize %>
+  <br>
+  <h4>Request delivery date and time: </h4><%=@cakerequest.delivery_date %>
+  <br>
+  <h4>Requested 'Pin-spiration': </h4><a href="<%=@cakerequest.choosen_img_url%>"
+   data-pin-do="embedPin">
+  </a>
+</div>
