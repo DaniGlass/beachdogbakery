@@ -8,7 +8,6 @@ module PinterestAdapter
     def search(term)
       init_connection
       @client.get_pins(query: term)
-
     end
   end
 end

@@ -2,16 +2,6 @@
 
 <%= erb :"cakerequests/_cake_request_form" %>
 
-
-<h2>Looking for some "Pin-spiration?"</h2>
- <div id='pins'>
-  <% @board.data.each do |pin| %>
-    <a href="https://www.pinterest.com/pin/<%=pin.id%>/"
-    data-pin-do="embedPin">
-    </a>
-  <% end %>
- </div>
-
 <br>
 <div>No longer wish to be a member?</div>
 <form action="/users/<%= @user.id%>" method="POST" >
