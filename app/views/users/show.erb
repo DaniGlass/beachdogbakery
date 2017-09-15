@@ -1,10 +1,15 @@
 <h1><%= @user.username.capitalize %>'s page</h1>
 
+<%= erb :"cakerequests/_cake_request_form" %>
 
 
-<%= erb :"requests/_cake_request_form" %>
+<h2>Looking for some "Pin-spiration?"</h2>
 
-
+ <% @board.data.each do |pin| %>
+    <a href="https://www.pinterest.com/pin/<%=pin.id%>/"
+    data-pin-do="embedPin">
+    </a>
+ <% end %>
 
 
 <div>No longer wish to be a member?</div>
