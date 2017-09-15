@@ -1,9 +1,8 @@
 require 'bcrypt'
-# require 'pintrest-api'
 
 class User < ActiveRecord::Base
   include BCrypt
-  has_many :requests
+  has_many :cakerequests
 
   validates :username, :email, {presence: true, uniqueness: true}
 

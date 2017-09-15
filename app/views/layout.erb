@@ -16,16 +16,19 @@
   <script src="/js/application.js"></script>
 
   <title> Beach Dog Bakery </title>
-  <a href="/users/new">Create a new account</a>
-  <br>
-  <% if !logged_in? %>
-  <a href="/login">Login</a>
+
+    <a href="/users/new">Create a new account</a>
+    <br>
+    <% if !logged_in? %>
+    <a href="/login">Login</a>
     <% else  %>
-  <a href="/logout">Logout</a>
-  <% end  %>
-  <br>
-  <a href="/">Home</a>
-  <br>
+    <a href="/users/<%=current_user.id%>">My Account </a>
+    <br>
+    <a href="/logout">Logout</a>
+    <% end  %>
+    <br>
+    <a href="/">Home</a>
+    <br>
 </head>
 <body>
   <%= yield %>
